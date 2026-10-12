@@ -114,12 +114,12 @@ body {
 /* ===== 発車標ボード ===== */
 .board {
   display: grid;
-  grid-template-columns: 850px;
+  grid-template-columns: 1200px;
   justify-content: center;
   margin: 10px 0;
 }
 .board > div {
-  width: 850px;
+  width: 1200px;
   background: #777;
   margin: 8px 0;
 }
@@ -137,12 +137,12 @@ body {
   grid-template-columns: 80px 1fr 50px;
   align-items: center;
   color: #fff;
-  font-size: 32px;
+  font-size: 62px;
   font-family: "国鉄っぽいフォント（正体）";
   margin-bottom: 6px;
 }
 .block-title .no {
-  border: 3px solid #fff;
+  border: 5px solid #fff;
   width: 45px;
   text-align: center;
 }
@@ -150,8 +150,8 @@ body {
 /* ===== ヘッダー（見出し） ===== */
 .header {
   display: grid;
-  grid-template-columns: 160px 320px 170px 100px 80px;
-  font-size: 22px;
+  grid-template-columns: 250px 360px 290px 180px 100px;
+  font-size: 36px;
   font-family: "MS ゴシック";
   color: #fff;
   text-align: center;
@@ -165,23 +165,23 @@ body {
 }
 .row {
   display: grid;
-  grid-template-columns: 160px 320px 166px 104px 80px;
+  grid-template-columns: 250px 360px 290px 180px 100px;
   align-items: center;
   margin-bottom: 3px;
-  height: 65px;
+  height: 115px;
 }
 
 /* ===== 表示文字 ===== */
-.type  { color: #33cc33; font-size: 56px; text-align: center; }
-.dest  { color: #ffcc00; font-size: 56px; text-align: center; }
-.time2 { color: #33cc33; font-size: 56px; text-align: right; position: relative; }
-.cars  { color: #ffcc00; font-size: 56px; text-align: center; }
-.track { color: #33cc33; font-size: 56px; text-align: center; }
+.type  { color: #33cc33; font-size: 98px; text-align: center; }
+.dest  { color: #ffcc00; font-size: 98px; text-align: center; }
+.time2 { color: #33cc33; font-size: 106px; text-align: right; position: relative; }
+.cars  { color: #ffcc00; font-size: 106px; text-align: center; }
+.track { color: #33cc33; font-size: 106px; text-align: center; }
 
 .cars .suffix {
-  font-size: 30px;
+  font-size: 60px;
   position: relative;
-  top: -2px;
+  top: -6px;
   margin-left: 2px;
 }
 
@@ -192,7 +192,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   color: red;
-  font-size: 26px;
+  font-size: 46px;
   white-space: nowrap;
 }
 
@@ -208,12 +208,12 @@ body {
 
 .row.arrival {
   grid-template-columns: 1fr;
-  height: 65px;
+  height: 115px;
 }
 .row.arrival > div {
   grid-column: 1 / -1;
   width: 100%;
-  font-size: 52px;
+  font-size: 102px;
   text-align: center;
   color: #ff3333;
   overflow: hidden;
@@ -234,7 +234,7 @@ body {
 
 /* ===== 音声停止ボタンエリア（大きく改善） ===== */
 .control-panel {
-  width: 850px;
+  width: 1050px;
   display: flex;
   justify-content: center;
   margin: 15px 0 25px 0;
@@ -245,7 +245,7 @@ body {
   background: linear-gradient(to bottom, #5E5F62, #9C9DA1);
   color: #fff;
   border: 3px solid #000;
-  font-size: 48px;
+  font-size: 108px;
   font-weight: bold;
   font-family: "MS ゴシック", monospace;
   padding: 16px 0;
