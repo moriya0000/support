@@ -231,6 +231,41 @@ body {
 .type.rapid {
   color: #ff3333;
 }
+
+/* ===== 音声停止ボタンエリア（大きく改善） ===== */
+.control-panel {
+  width: 850px;
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 25px 0;
+}
+
+.stop-audio-btn {
+  width: 100%;
+  background: linear-gradient(to bottom, #77787B, #C0C0C0);
+  color: #fff;
+  border: 3px solid #000;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: "MS ゴシック", monospace;
+  padding: 16px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  letter-spacing: 2px;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.stop-audio-btn:hover {
+  background: linear-gradient(to bottom, #ff6666, #e60000);
+  transform: scale(1.01);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+.stop-audio-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+}
 </style>
 </head>
 
@@ -275,6 +310,11 @@ body {
 
 <!-- 発車標表示エリア -->
 <div class="board" id="board"></div>
+
+<!-- ▼ ここを新しく追加する ▼ -->
+<div class="control-panel">
+  <button class="stop-audio-btn" id="stopAudioBtn">音声を止める (スペースキーでも停止可)</button>
+</div>
 
 <script>
 /* ===== 設定・CSVデータ ===== */
@@ -491,15 +531,25 @@ document.getElementById('startSystemBtn').addEventListener('click', () => {
   }, 400);
 });
 
+// 音声停止の共通処理関数
+function stopAlarm() {
+  if (!alarmSound.paused) {
+    alarmSound.pause();
+    alarmSound.currentTime = 0;
+  }
+}
+
 // スペースキーが押されたらアラームを停止する
 window.addEventListener('keydown', (e) => {
   if (e.code === 'Space' || e.key === ' ') {
     e.preventDefault();
-    if (!alarmSound.paused) {
-      alarmSound.pause();
-      alarmSound.currentTime = 0;
-    }
+    stopAlarm();
   }
+});
+
+// ▼ 音声停止ボタンがクリックされたらアラームを停止する処理を追加 ▼
+document.getElementById('stopAudioBtn').addEventListener('click', () => {
+  stopAlarm();
 });
 
 const holidays = {
