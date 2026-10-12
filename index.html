@@ -242,7 +242,7 @@ body {
 
 .stop-audio-btn {
   width: 100%;
-  background: linear-gradient(to bottom, #77787B, #C0C0C0);
+  background: linear-gradient(to bottom, #5E5F62, #9C9DA1);
   color: #fff;
   border: 3px solid #000;
   font-size: 48px;
@@ -257,7 +257,7 @@ body {
 }
 
 .stop-audio-btn:hover {
-  background: linear-gradient(to bottom, #ff6666, #e60000);
+  background: linear-gradient(to bottom, #212122, #5E5F62);
   transform: scale(1.01);
   box-shadow: 0 8px 16px rgba(0,0,0,0.5);
 }
@@ -305,7 +305,7 @@ body {
   <button id="btnWeekday">平日</button>
   <button id="btnHoliday">休日</button>
   <span id="timetableStatus" style="margin-left:18px;"></span>
-  <span>　　アラームを止めるにはスペースキーを押してください</span>
+  <span>　　アラームを止めるにはスペースキーまたはボタンを押してください</span>
 </div>
 
 <!-- 発車標表示エリア -->
@@ -313,7 +313,7 @@ body {
 
 <!-- ▼ ここを新しく追加する ▼ -->
 <div class="control-panel">
-  <button class="stop-audio-btn" id="stopAudioBtn">音声を止める (スペースキーでも停止可)</button>
+  <button class="stop-audio-btn" id="stopAudioBtn">音声を止める</button>
 </div>
 
 <script>
